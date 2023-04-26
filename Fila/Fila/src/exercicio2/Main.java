@@ -22,7 +22,7 @@ public class Main
 				//N�o faz nada
 				break;
 			case 1:
-				System.out.println("Entre com o nome do processo para adicionar: ");
+				System.out.println("Entre com item para adicionar na fila 1: ");
 				elemento = scanner.nextInt();
 				
 				if ( ! f1.insere(elemento) )
@@ -30,15 +30,15 @@ public class Main
 				break;
 				
 			case 2:
-				System.out.println("Entre com o nome do processo para adicionar: ");
+				System.out.println("Entre com item para adicionar na fila 2: ");
 				elemento = scanner.nextInt();
 				
 				if ( ! f2.insere(elemento) )
-					System.out.println("Fila de Processos cheia.");
+					System.out.println("Fila cheia.");
 				break;
 				
 			case 3:
-				System.out.println("Conte�do da Fila de Processos:");
+				System.out.println("Conte�do da Fila:");
 				filaMista.combinaFilas(f1, f2);
 				
 				Imprime(filaMista);
@@ -51,6 +51,8 @@ public class Main
 		scanner.close();
 	}
 	
+	//Para facilitar a inserção de dados implementei os menus e impressão de fila como metodos estaticos
+	// além de deixar o codigo da main sucinto
 	public static int Menu()
 	{
 		Scanner scanner = new Scanner(System.in);
