@@ -1,4 +1,4 @@
-package filaCircularDupla;
+package exercicio4;
 
 import java.util.Scanner;
 
