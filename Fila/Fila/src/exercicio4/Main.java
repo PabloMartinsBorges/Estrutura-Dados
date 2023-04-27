@@ -2,13 +2,12 @@ package exercicio4;
 
 import java.util.Scanner;
 
-import exercicio2.Fila;
 
 public class Main
 {
 	public static void main(String args[])
 	{
-		TesteFilaSimples filaSTeste = new TesteFilaSimples(5);
+		Fila filaS = new Fila(5);
 		FilaDupla filaD = new FilaDupla(5);
 		Scanner scanner = new Scanner(System.in);
 		int escolha, item;
@@ -16,34 +15,25 @@ public class Main
 		
 		do
 		{
-			escolha = filaSTeste.menu();
+			escolha = Menu();
 			
 			switch(escolha) {
 			case 0:
 				//N�o faz nada
 				break;
 			case 1:
-				System.out.println("Entre com item para adicionar na fila 1: ");
+				System.out.println("Entre com o item para adicionar: ");
 				item = scanner.nextInt();
-				
-				if ( ! filaSTeste.insere(item) )
-					System.out.println("Fila de Processos cheia.");
-				break;
-				
-			case 2:
-				System.out.println("Entre com item para adicionar na fila 2: ");
-				item = scanner.nextInt();
-				
-				if ( ! .insere(elemento) )
+				if ( ! filaS.insere(item) )
 					System.out.println("Fila cheia.");
 				break;
-				
-			case 3:
-				System.out.println("Conte�do da Fila:");
-				filaMista.combinaFilas(f1, f2);
-				
-				Imprime(filaMista);
-				break;
+			case 2:
+				item = filaS.remove();
+				if (item != Integer.MIN_VALUE)
+					System.out.println("Item " + item + " removido.");
+				else
+					System.out.println("Fila vazia.");
+				break;      
 			}
 			
 		}while(escolha != 0);
@@ -52,10 +42,17 @@ public class Main
 		scanner.close();
 	
 //---------------------------------------------------------------------------------------
+			
+		
+		filaD  = Fila.retornaFilaDupla(filaS);
+		
+		
+//---------------------------------------------------------------------------------------
+		
 		
 		do
 		{
-			escolha = Menu();
+			escolha = menuFilaDupla();
 
 			switch(escolha) {
 			case 0:
@@ -89,7 +86,7 @@ public class Main
 				break;
 			case 5:
 				System.out.println("Conte�do da fila:");
-				Imprime(filaD);
+				filaD.imprime();
 				break;
 			}
 
@@ -102,7 +99,7 @@ public class Main
 	
 	
 	
-/*
+
 	
 	public static int Menu()
 	{
@@ -121,52 +118,27 @@ public class Main
 		
 		return escolha;
 	}
-	
-	
-	public static void PreencherFila(Fila f) {
-		int escolha, item;
-		
-		Scanner scanner = new Scanner(System.in);
-		do
-		{
-			escolha = Menu();
-			
-			switch(escolha) {
-			case 0:
-				//N�o faz nada
-				break;
-			case 1:
-				System.out.println("Entre com o item para adicionar: ");
-				item = scanner.nextInt();
-				if ( ! f.insere(item) )
-					System.out.println("Fila cheia.");
-				break;
-			case 2:
-				item = f.remove();
-				if (item != Integer.MIN_VALUE)
-					System.out.println("Item " + item + " removido.");
-				else
-					System.out.println("Fila vazia.");
-				break;
-			case 3:
-				System.out.println("Conte�do da fila:");
-				Imprime(f);
-				break;        
-			}
-			
-		}while(escolha != 0);
-	
-	}
-	
-	public static void Imprime(Fila f)
+
+	public static int menuFilaDupla()
 	{
+		Scanner scanner = new Scanner(System.in);
+		int escolha;
 		
-		if (f.vazia())
-			System.out.println("Fila est� vazia.");
-		else {
-			System.out.print("Fila mista: ");
-			for (int i =0; i < f.tamanho-1; i++)
-				System.out.print(f.vetor[i]+", ");
-		}
-	}*/
+		System.out.println("--------------------------");
+		System.out.println("Selecione a opcao:");
+		System.out.println("1. Insere elemento no fim da fila.");
+		System.out.println("2. Remove elemento do in�cio da fila.");
+		System.out.println("3. Insere elemento no in�cio da fila.");
+		System.out.println("4. Remove elemento do fim da fila.");  
+		System.out.println("5. Imprime elementos a partir do in�cio da fila.");
+		System.out.println("0. Fim.");
+		System.out.println("Opcao: ");
+		escolha = scanner.nextInt();
+		
+		return escolha;
+	}	
+	
+	
+	
+
 }

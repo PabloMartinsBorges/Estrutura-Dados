@@ -1,5 +1,6 @@
 package exercicio4;
 
+
 import filaCircularSimples.Fila;
 
 public class FilaDupla extends Fila
@@ -42,5 +43,15 @@ public class FilaDupla extends Fila
 		return elemento;
 	}
 	
+	public void imprime()
+	{
+		int i, j;
+		
+		if(vazia())
+			System.out.println("Fila est� vazia");
+		else
+			for (i = ini, j = 1; j <= n; j = j + 1, i = (i + 1) % tamanho)
+				System.out.println(j + " " + vetor[i]);
+	}
 	
 }

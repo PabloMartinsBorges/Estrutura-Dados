@@ -1,5 +1,8 @@
 package exercicio2;
 
+
+
+
 public class Fila
 {
 	/* Atributos protected para serem usados na subclasse. */
@@ -76,4 +79,7 @@ public class Fila
 		}
 		
 	}
+
+
+
 }
