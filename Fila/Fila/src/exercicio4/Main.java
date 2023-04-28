@@ -38,15 +38,12 @@ public class Main
 			
 		}while(escolha != 0);
 		
-	
-		scanner.close();
+
 	
 //---------------------------------------------------------------------------------------
-			
-		
+				
 		filaD  = Fila.retornaFilaDupla(filaS);
-		
-		
+			
 //---------------------------------------------------------------------------------------
 		
 		
@@ -108,9 +105,8 @@ public class Main
 
 		System.out.println("--------------------------");
 		System.out.println("Selecione a opcao:");
-		System.out.println("1. Insere um item na Fila 1.");
-		System.out.println("2. Insere um item na Fila 2.");
-		System.out.println("3. Imprime a fila mista.");
+		System.out.println("1. Insere um item na Fila.");
+		System.out.println("2. Remove o item do inicio.");
 		System.out.println("0. Fim.");
 		System.out.print("Opcao: ");
 		escolha = scanner.nextInt();
