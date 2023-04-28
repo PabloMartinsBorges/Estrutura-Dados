@@ -41,16 +41,5 @@ public class TesteFilaDupla extends FilaDupla
 		return escolha;
 	}
 	
-	//metodo feito para transferir filas duplas mais generiacas para serem testadas por essa classe
-	public void transfereFila(FilaDupla fd) {
-		
-		if(fd.vazia())
-			System.out.println("Fila Vazia");
-		else
-		while(!fd.vazia()) {
-			this.insere(fd.remove());
-			
-		}
-		
-	}
+
 }

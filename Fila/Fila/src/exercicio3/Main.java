@@ -6,7 +6,9 @@ public class Main
 	public static void main(String args[])
 	{
 		
-		SistemaOperacional so = new SistemaOperacional(5);
+		Fila filaDePilhas = new Fila(5);
+		PilhaGenerica pilhaG = new PilhaGenerica(5);
+		
 		Scanner scanner = new Scanner(System.in);
 		int escolha;
 		String nome;

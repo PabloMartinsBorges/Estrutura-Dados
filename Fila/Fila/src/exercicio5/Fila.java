@@ -1,4 +1,7 @@
-package exercicio3;
+package exercicio5;
+
+
+
 
 public class Fila
 {
@@ -7,18 +10,14 @@ public class Fila
 	protected int[] vetor;	/* Vetor de elementos */
 	protected int ini;	/* Posicao do proximo elemento a ser retirado */
 	protected int n;	/* Numero de elementos na fila */
-	protected PilhaGenerica[] vetorPilha;
-	protected Fila[] vetorFila;
 	
 	public Fila(int tam)
 	{
 		tamanho = tam;
-		vetorPilha = new PilhaGenerica[tamanho];
+		vetor = new int[tamanho];
 		ini = 0;
 		n = 0;
 	}
-	
-	
 	
 	public boolean vazia()
 	{
@@ -46,17 +45,41 @@ public class Fila
 	}
 	
 	//Inserimos o elemento no final da fila
-	public boolean insere(PilhaGenerica elemento)
+	public boolean insere(int elemento)
 	{
 	  int fim;
 	  
 	  if ( !cheia() ) {
 	    fim = (ini + n) % tamanho;
-	    vetorPilha[fim] = elemento;
+	    vetor[fim] = elemento;
 	    n++;
 	    return true;
 	  } 
 	  else
 	    return false;
 	}
+	
+	
+	public void combinaFilas(Fila f1, Fila f2) {
+		
+		int tam;
+		
+		if(f1.tamanho > f2.tamanho) tam = f1.tamanho;
+		else tam = f2.tamanho;
+			
+
+		for(int i = 0; i < tam; i++) {
+			if(!f1.vazia() && !this.cheia()) {
+				this.insere(f1.remove()); 
+			}
+			
+			if(!f2.vazia() && !this.cheia()) {
+				this.insere(f2.remove()); 
+			}
+		}
+		
+	}
+
+
+
 }
