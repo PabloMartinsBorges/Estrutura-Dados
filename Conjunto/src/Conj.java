@@ -114,8 +114,13 @@ public class Conj
 		if (p == prim) {
 			prim = q;
 			menorElem = q.dado;
-		}else
+			maiorElem = q.dado;
+		}else {
 			ant.prox = q;
+			if(maiorElem < q.dado) 
+				maiorElem = q.dado;
+			
+		}
 		
 			
 		
