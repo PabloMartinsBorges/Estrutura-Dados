@@ -41,10 +41,16 @@ public class Main
 					a11.defineVal(11);
 					a11.defineEsq(a10);
 				}
-				a4.mostra();
+				System.out.println("Impressão em pré-ordem:");
+				a4.imprimePreOrdem();
 				System.out.println();
-				a4.imprimeSimetrico();
+				
+				
+				System.out.println("Impressão em ordem simetrica");
+				a4.imprimeEmOrdem();
 				System.out.println();
+				
+				System.out.println("Impressão em pós-ordem");
 				a4.imprimePosOrdem();
 				System.out.println();
 	}
