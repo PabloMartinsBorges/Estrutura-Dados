@@ -1,4 +1,4 @@
-package exercicio2;
+package exercicio3;
 import java.util.Deque;
 import java.util.ArrayDeque;
 
@@ -42,22 +42,6 @@ public class Main
 					a11.defineEsq(a10);
 				}
 				a4.mostra();
-				
 				System.out.println();
-				
-				System.out.println("Soma a partir do no 28: " + Arvbin.retornaSomaSubArvore(a4));
-				
-				System.out.println();
-				
-				System.out.println("Soma a partir do no 11 (SAE): " + Arvbin.retornaSomaSubArvore(a11));
-				
-				System.out.println();
-				
-				System.out.println("Soma a partir do no 10 (SAE): " +Arvbin.retornaSomaSubArvore(a10));
-				
-				
-				System.out.println();
-				
-				System.out.println("Soma a partir do no 11 (SAD): " +Arvbin.retornaSomaSubArvore(a7));
 	}
 }
