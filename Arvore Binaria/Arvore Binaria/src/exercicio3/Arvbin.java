@@ -375,4 +375,31 @@ public class Arvbin<T extends Comparable<T>>
 
 		System.out.println();
 	}
+	
+	
+	
+	
+	public boolean eSimilar(Arvbin<T> arvore) {
+		
+	
+		if(arvore == null) 
+			return false;
+		
+
+		if((this.esq == null && arvore.esq == null) && (this.dir == null && arvore.dir == null))
+				return true;
+		
+	
+		if((this.esq != null && arvore.esq == null) || (this.dir == null && arvore.dir != null) || (this.dir != null && arvore.dir == null) || (this.dir != null && arvore.dir == null))
+			return false;
+		
+		
+		return esq.eSimilar(arvore.esq) && dir.eSimilar(arvore.dir);
+	}
+	
+	
+	
+	
+	
+	
 }
