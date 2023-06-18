@@ -12,7 +12,7 @@ public class Main
 				a4 = new Arvbin<Integer>(28),
 				a5 = new Arvbin<Integer>(5),
 				a6 = new Arvbin<Integer>(6),
-				a7 = new Arvbin<Integer>(7,a5,a6),
+				a7 = new Arvbin<Integer>(11,a5,a6),
 				a8 = new Arvbin<Integer>(8),
 				a9 = new Arvbin<Integer>(9),
 				a10 = new Arvbin<Integer>(10,a8,a9);
@@ -43,24 +43,19 @@ public class Main
 				}
 				a4.mostra();
 				
-				Arvbin<Integer> a12 = a4.busca(10), a13 = a4.busca(7);
-				
-				a12.defineVal(12);
-				a12.defineDir(a1);
-				a12.defineEsq(a2);
-				//a12.defineEsq(a11);
-				//a12.defineDir(a10);
-				
-				a13.defineVal(11);
-				a13.defineDir(a1);
-				a13.defineEsq(a2);
-				//a13.defineEsq(a11);
-				//a13.defineDir(a10);
 				
 				System.out.println();
 				
-				System.out.print(a12.eSimilar(a13));
+				System.out.println("Teste com arvores não similares - 10(8)(9) e 2");
+				
+				System.out.print(a10.eSimilar(a2));
 				
 				
+				System.out.println();
+				
+				System.out.println("Teste com arvores similares 10(8)(9) e 11(5)(6)");
+				
+				System.out.print(a10.eSimilar(a7));
+
 	}
 }
