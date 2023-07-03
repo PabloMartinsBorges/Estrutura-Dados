@@ -1,0 +1,7 @@
+1)Heap é uma estrutura baseada numa "Fila de Prioridade" no qual os diferentes elementos que serão armazenados nessa
+fila receberão uma valor, chamado de chave, o qual definirá a sua prioridade. A partir disso, a implementação do heap
+permite que remover, de forma mais eficiente, o elemento de maior prioridade da fila. Um exmplo de iplementação da heap
+é no algoritmo de heapsort, o qual permite utilizar um algoritmo de ordenação estavél e eficiente. 
+
+2)O(n) - Passar o conteudo da Heap Maxima para o vetor custa O(n). Após, utilizar o contruiHeap() custa também O(n).
+Logo a complexidade custa O(n+n) ou O(2*n), desconsiderando a constante temos O(n)
