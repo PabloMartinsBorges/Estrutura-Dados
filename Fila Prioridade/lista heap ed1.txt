@@ -5,3 +5,6 @@ permite que remover, de forma mais eficiente, o elemento de maior prioridade da 
 
 2)O(n) - Passar o conteudo da Heap Maxima para o vetor custa O(n). Após, utilizar o contruiHeap() custa também O(n).
 Logo a complexidade custa O(n+n) ou O(2*n), desconsiderando a constante temos O(n)
+
+3)O(n) - Passar o conteudo da Heap Minima para o vetor custa O(n). Após, utilizar o contruiHeap() custa também O(n).
+Logo a complexidade custa O(n+n) ou O(2*n), desconsiderando a constante temos O(n)
