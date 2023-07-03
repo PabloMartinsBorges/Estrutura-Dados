@@ -1,10 +1,11 @@
+package exercicio1;
 public class HeapBinariaMinima
 {
 	private int n;               /* Numero de elementos no heap. */   
-	private int tam;             /* Tamanho máximo do heap. */
+	private int tam;             /* Tamanho mï¿½ximo do heap. */
 	private int[] vetor;          /* Vetor com elementos. */
 
-	/* Constrói heap vazio. */
+	/* Constrï¿½i heap vazio. */
 	public HeapBinariaMinima(int tamanho)
 	{
 		n = 0;
@@ -12,7 +13,7 @@ public class HeapBinariaMinima
 		vetor = new int[tamanho+1];
 	}
 
-	/* Constrói heap a partir de vetor v. */
+	/* Constrï¿½i heap a partir de vetor v. */
 	public HeapBinariaMinima(int tamanho, int[] v)
 	{
 		tam = tamanho;
@@ -24,9 +25,21 @@ public class HeapBinariaMinima
 
 		constroiHeap();
 	}
+	
+	public HeapBinariaMinima(HeapBinariaMaxima heapMaxima) {
+		tam = heapMaxima.retornaTam();	
+		vetor = new int [tam+1];
+		n = tam; 
+		
+		for(int i = tam; i>0; i--) {
+			vetor[i] = heapMaxima.removeMax();
+		}
+		
+		constroiHeap();
+	}
 
-	/* Testa se a fila de prioridade está logicamente vazia.
-	   Retorna true se vazia, false, caso contrário. */
+	/* Testa se a fila de prioridade estï¿½ logicamente vazia.
+	   Retorna true se vazia, false, caso contrï¿½rio. */
 	public boolean vazia()
 	{
 		return n == 0;
@@ -41,7 +54,7 @@ public class HeapBinariaMinima
 	/* Imprime os elementos da heap. */
 	public void imprime()
 	{
-		System.out.print("Conteúdo da heap: ");
+		System.out.print("Conteï¿½do da heap: ");
 		
 		for(int i = 1; i <= n; i++)
 			System.out.print(vetor[i] + " ");
@@ -81,16 +94,16 @@ public class HeapBinariaMinima
 		return itemMin;
 	}
 
-	/* Método auxiliar que estabelece a propriedade de ordem do heap a 
-	 * partir de um vetor arbitrário dos itens. */
+	/* Mï¿½todo auxiliar que estabelece a propriedade de ordem do heap a 
+	 * partir de um vetor arbitrï¿½rio dos itens. */
 	private void constroiHeap()
 	{
 		for( int i = n / 2; i > 0; i-- )
 			refaz(i);
 	}
 
-	/* Método auxiliar para restaurar a propriedade de heap que
-	 * não está sendo respeitada pelo nó i. */
+	/* Mï¿½todo auxiliar para restaurar a propriedade de heap que
+	 * nï¿½o estï¿½ sendo respeitada pelo nï¿½ i. */
 	private void refaz(int i)
 	{
 		int x = vetor[ i ];
@@ -102,13 +115,13 @@ public class HeapBinariaMinima
 			filhoEsq = 2*i;
 			filhoDir = 2*i + 1;
 			
-			/* Por enquanto, o menor filho é o da esquerda. */
+			/* Por enquanto, o menor filho ï¿½ o da esquerda. */
 			menorFilho = filhoEsq;
 			
 			/* Verifica se o filho direito existe. */
 			if(filhoDir <= n)
 			{
-				 /* Em caso positivo, verifica se é menor que o filho esquerdo. */
+				 /* Em caso positivo, verifica se ï¿½ menor que o filho esquerdo. */
 				if(vetor[ filhoDir ] < vetor[ filhoEsq ])
 					menorFilho = filhoDir;
 			}
@@ -119,9 +132,9 @@ public class HeapBinariaMinima
 			else
 				break;
 			
-			/* Como o elemento x que estava na posição "i" desceu para o nível de baixo, a próxima
-			 * iteração vai verificar a possibilidade de trocar esse elemento x (agora na 
-			 * posição "menorFilho") com um de seus novos filhos. */
+			/* Como o elemento x que estava na posiï¿½ï¿½o "i" desceu para o nï¿½vel de baixo, a prï¿½xima
+			 * iteraï¿½ï¿½o vai verificar a possibilidade de trocar esse elemento x (agora na 
+			 * posiï¿½ï¿½o "menorFilho") com um de seus novos filhos. */
 			i = menorFilho;
 		}
 		
@@ -129,7 +142,7 @@ public class HeapBinariaMinima
 	}
 
 	/* Insere item x na fila de prioridade, mantendo a propriedade do heap.
-	 * São permitidas duplicatas. */
+	 * Sï¿½o permitidas duplicatas. */
 	public void insere(int x)
 	{
 		if (tam == n)
@@ -138,12 +151,12 @@ public class HeapBinariaMinima
 			return;
 		}
 
-		/* O elemento é inicialmente inserido na primeira posição disponível
-		 * na árvore, considerando de cima para baixo, da esquerda para a direita. */
+		/* O elemento ï¿½ inicialmente inserido na primeira posiï¿½ï¿½o disponï¿½vel
+		 * na ï¿½rvore, considerando de cima para baixo, da esquerda para a direita. */
 		n++;
 		int pos = n;
 		
-		/* Sentinela utilizada para tratar o caso do pai do nó raiz (de índice 1). */
+		/* Sentinela utilizada para tratar o caso do pai do nï¿½ raiz (de ï¿½ndice 1). */
 		vetor[0] = x;
 
 		/* Refaz heap (sobe elemento). */

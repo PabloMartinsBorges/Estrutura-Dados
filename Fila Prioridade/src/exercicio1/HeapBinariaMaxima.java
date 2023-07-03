@@ -1,10 +1,11 @@
+package exercicio1;
 public class HeapBinariaMaxima
 {
 	private int n;               /* Numero de elementos no heap. */   
-	private int tam;             /* Tamanho máximo do heap. */
+	private int tam;             /* Tamanho mï¿½ximo do heap. */
 	private int[] vetor;          /* Vetor com elementos. */
 
-	/* Constrói heap vazio. */
+	/* Constrï¿½i heap vazio. */
 	public HeapBinariaMaxima(int tamanho)
 	{
 		n = 0;
@@ -12,7 +13,7 @@ public class HeapBinariaMaxima
 		vetor = new int[tamanho+1];
 	}
 
-	/* Constrói heap a partir de vetor v. */
+	/* Constrï¿½i heap a partir de vetor v. */
 	public HeapBinariaMaxima(int tamanho, int[] v)
 	{
 		tam = tamanho;
@@ -25,8 +26,8 @@ public class HeapBinariaMaxima
 		constroiHeap();
 	}
 
-	/* Testa se a fila de prioridade está logicamente vazia.
-	   Retorna true se vazia, false, caso contrário. */
+	/* Testa se a fila de prioridade estï¿½ logicamente vazia.
+	   Retorna true se vazia, false, caso contrï¿½rio. */
 	public boolean vazia()
 	{
 		return n == 0;
@@ -47,8 +48,8 @@ public class HeapBinariaMaxima
 		System.out.println();
 	}
 	
-	/* Imprime os elementos da heap até o tamanho máximo do vetor, a contar de 1.
-	 * Este método é utilizado somente após a aplicação do Heapsort. */
+	/* Imprime os elementos da heap atï¿½ o tamanho mï¿½ximo do vetor, a contar de 1.
+	 * Este mï¿½todo ï¿½ utilizado somente apï¿½s a aplicaï¿½ï¿½o do Heapsort. */
 	public void imprimeTamanho()
 	{
 		for(int i = 1; i <= tam; i++)
@@ -89,18 +90,18 @@ public class HeapBinariaMaxima
 		return itemMax;
 	}
 
-	/* Método auxiliar que estabelece a propriedade de ordem do heap a 
-	 * partir de um vetor arbitrário dos itens. */
+	/* Mï¿½todo auxiliar que estabelece a propriedade de ordem do heap a 
+	 * partir de um vetor arbitrï¿½rio dos itens. */
 	private void constroiHeap()
 	{
-		/* As posições n até a posição (n / 2) + 1 já constituem uma heap,
-		 * pois são folhas. */
+		/* As posiï¿½ï¿½es n atï¿½ a posiï¿½ï¿½o (n / 2) + 1 jï¿½ constituem uma heap,
+		 * pois sï¿½o folhas. */
 		for( int i = n / 2; i > 0; i-- )
 			refaz(i);
 	}
 
-	/* Método auxiliar para restaurar a propriedade de heap que
-	 * não está sendo respeitada pelo nó i. */
+	/* Mï¿½todo auxiliar para restaurar a propriedade de heap que
+	 * nï¿½o estï¿½ sendo respeitada pelo nï¿½ i. */
 	private void refaz(int i)
 	{
 		int x = vetor[ i ];
@@ -112,13 +113,13 @@ public class HeapBinariaMaxima
 			filhoEsq = 2*i;
 			filhoDir = 2*i + 1;
 			
-			/* Por enquanto, o maior filho é o da esquerda. */
+			/* Por enquanto, o maior filho ï¿½ o da esquerda. */
 			maiorFilho = filhoEsq;
 			
 			/* Verifica se o filho direito existe. */
 			if(filhoDir <= n)
 			{
-				 /* Em caso positivo, verifica se é maior que o filho esquerdo. */
+				 /* Em caso positivo, verifica se ï¿½ maior que o filho esquerdo. */
 				if(vetor[ filhoDir ] > vetor[ filhoEsq ])
 					maiorFilho = filhoDir;
 			}
@@ -128,9 +129,9 @@ public class HeapBinariaMaxima
 			else
 				break;
 			
-			/* Como o elemento x que estava na posição "i" desceu para o nível de baixo, a próxima
-			 * iteração vai verificar a possibilidade de trocar esse elemento x (agora na 
-			 * posição "maiorFilho") com um de seus novos filhos. */
+			/* Como o elemento x que estava na posiï¿½ï¿½o "i" desceu para o nï¿½vel de baixo, a prï¿½xima
+			 * iteraï¿½ï¿½o vai verificar a possibilidade de trocar esse elemento x (agora na 
+			 * posiï¿½ï¿½o "maiorFilho") com um de seus novos filhos. */
 			i = maiorFilho;
 		}
 		
@@ -138,7 +139,7 @@ public class HeapBinariaMaxima
 	}
 
 	/* Insere item x na fila de prioridade, mantendo a propriedade do heap.
-	 * São permitidas duplicatas. */
+	 * Sï¿½o permitidas duplicatas. */
 	public void insere(int x)
 	{
 		if (tam == n)
@@ -147,12 +148,12 @@ public class HeapBinariaMaxima
 			return;
 		}
 
-		/* O elemento é inicialmente inserido na primeira posição disponível
-		 * na árvore, considerando de cima para baixo, da esquerda para a direita. */
+		/* O elemento ï¿½ inicialmente inserido na primeira posiï¿½ï¿½o disponï¿½vel
+		 * na ï¿½rvore, considerando de cima para baixo, da esquerda para a direita. */
 		n++;
 		int pos = n;
 		
-		/* Sentinela utilizada para tratar o caso do pai do nó raiz (de índice 1). */
+		/* Sentinela utilizada para tratar o caso do pai do nï¿½ raiz (de ï¿½ndice 1). */
 		vetor[0] = x;
 
 		/* Refaz heap (sobe elemento). */
@@ -165,7 +166,7 @@ public class HeapBinariaMaxima
 		vetor[pos] = x;
 	}
 
-	/* Implementa o algoritmo de ordenação Heapsort. */
+	/* Implementa o algoritmo de ordenaï¿½ï¿½o Heapsort. */
 	public void heapsort()
 	{
 		int x;           
@@ -182,5 +183,9 @@ public class HeapBinariaMaxima
 			n--;
 			refaz(raiz);
 		}
+	}
+	
+	public int retornaTam() {
+		return tam;
 	}
 }
